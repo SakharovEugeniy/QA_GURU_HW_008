@@ -15,7 +15,6 @@ public class PetSorePageTest extends BaseTest {
     @ParameterizedTest(name = "Проверка перехода с главной страницы на страницу {0}")
     public void transitionFromTheMainPageToSelectedAnimalPage(String setAnimal) {
         open("https://petstore.octoperf.com/actions/Catalog.action");
-        //$("area[alt=Fish]").click();
         $("area[alt=" + setAnimal + "]").click();
         $("#Catalog").shouldHave(text(setAnimal));
     }

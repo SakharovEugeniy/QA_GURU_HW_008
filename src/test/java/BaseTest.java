@@ -8,14 +8,13 @@ public class BaseTest {
 
 
     @BeforeAll
-    static void beforeAll() {
+    static void allPagesPreConditionSetup() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = false;
     }
 
     @AfterEach
-    void afterEach() {
+    void allPagesPostCondition() {
         Selenide.closeWebDriver();
     }
 }
